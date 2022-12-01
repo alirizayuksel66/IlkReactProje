@@ -1,6 +1,9 @@
 import logom from "./logo.svg"
 import { Title } from "./Components";
 import Bootstrap from "./Bootstrap";
+import Tailwind from "./Tailwind";
+import './tailwind.css'
+import './style.scss'
 import './style.css'
 
 function App() {
@@ -17,8 +20,13 @@ function App() {
         <img src={logom}></img>
         </>
       )}
+      <p className="ali">
+        Ali Rıza
+        <span> Yüksel </span>
+      </p>
       Ali Rıza
       <Bootstrap />
+      <Tailwind />
     </div>
   );
 }

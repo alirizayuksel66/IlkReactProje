@@ -1,0 +1,9 @@
+$p: pink;
+$y: yellow;
+
+.ali{
+    background: $p;
+    span {
+        background: $y;
+    }
+}
