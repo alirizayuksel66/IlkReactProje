@@ -1,33 +1,36 @@
-import logom from "./logo.svg"
-import { Title } from "./Components";
-import Bootstrap from "./Bootstrap";
-import Tailwind from "./Tailwind";
-import './tailwind.css'
+import { createElement } from 'react';
 import './style.scss'
-import './style.css'
+
 
 function App() {
-  return (
-    <div className="App">
-      <Title>{process.env.NODE_ENV}</Title>
-      <Title theme="dark">Ali Rıza Yüksel</Title>
-      <p>
-        {process.env.REACT_APP_API_URL}
-      </p>
-      {process.env.NODE_ENV == 'production' &&(
-        <>
-        Merhaba
-        <img src={logom}></img>
-        </>
-      )}
-      <p className="ali">
-        Ali Rıza
-        <span> Yüksel </span>
-      </p>
-      Ali Rıza
-      <Bootstrap />
-      <Tailwind />
-    </div>
+  const aile = ['Ali Rıza', 'Yasemin', 'Cevat']
+  /*const ali= createElement('h1', null, 'Ali Rıza Yüksel')
+  const ailee = createElement('ul', null, aile.map( todo => createElement('li', null, todo))) 
+
+  return createElement('main', {
+    className: 'test',
+    id: 'main'
+  }, ali,ailee)
+  */
+  const stillendir= {color: 'blue', backgroundColor:'green'}
+  const Uyari = () => { alert('HEY!')}
+  const name = 'Özgül'
+
+  return  (
+    <main id="main" className="test">
+      <p tabIndex="4" style={{color: 'pink', backgroundColor:'purple'}}>Ali Rıza Yüksel</p>
+      <p tabIndex="3" style={stillendir}>Ali Rıza Yüksel</p>
+      <label htmlFor="odak" tabIndex="2" onClick={Uyari}>Arama</label>
+      <input type="text" id="odak" tabIndex="1"/>
+      <ul>
+        {name.toUpperCase()}
+        {aile.map(todo=>(
+          <li key={todo}>
+            {todo}
+          </li>
+        ))}
+      </ul>
+    </main>
   );
 }
 
