@@ -1,6 +1,7 @@
 import { createElement } from 'react';
-import './style.scss'
-
+import './tailwind.css'
+import Button from "./components/Button"
+import Tab from "./components/Tab"
 
 function App() {
   const aile = ['Ali Rıza', 'Yasemin', 'Cevat']
@@ -18,6 +19,20 @@ function App() {
 
   return  (
     <main id="main" className="test">
+      <div style={{padding: 20}}>
+        <Tab activeTab={1}>
+          <Tab.Panel title="Profil">1. Tab</Tab.Panel>
+          <Tab.Panel title="Hakkında">2. Tab</Tab.Panel>
+          <Tab.Panel title="Ayarlar">3. Tab</Tab.Panel>
+        </Tab>
+      </div>
+
+      <div style={{padding: 20}}>
+        <Button variant="danger">Buton Örneği</Button>
+        <Button variant="success">Buton Örneği</Button>
+        <Button variant="info">Buton Örneği</Button>
+        <Button> Buton Örneği </Button>
+      </div>
       <p tabIndex="4" style={{color: 'pink', backgroundColor:'purple'}}>Ali Rıza Yüksel</p>
       <p tabIndex="3" style={stillendir}>Ali Rıza Yüksel</p>
       <label htmlFor="odak" tabIndex="2" onClick={Uyari}>Arama</label>
